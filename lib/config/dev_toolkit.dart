@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 
 class DevToolkit {
+  static String currencyCode = 'EUR';
+  static String deviceInfoSignaturePrefix = '';
   static Locale locale = Locale('en');
 
   static String get localeName => _getLocaleName();
