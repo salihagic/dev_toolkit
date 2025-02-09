@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
-extension AppFormStateX on GlobalKey<FormState> {
+extension DevFormStateX on GlobalKey<FormState> {
   bool validate() => currentState?.validate() ?? false;
 }

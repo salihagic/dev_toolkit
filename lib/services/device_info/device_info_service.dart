@@ -79,7 +79,8 @@ class AndroidDeviceInfoServiceImpl implements DeviceInfoService {
   }
 
   @override
-  String signature([String? prefix]) => '${prefix.value}${DevToolkit.deviceInfoSignaturePrefix}[ANDROID]-${_androidInfo.id}-${_androidInfo.serialNumber}-${_androidInfo.fingerprint}';
+  String signature([String? prefix]) =>
+      '${prefix.value}${DevToolkit.deviceInfoSignaturePrefix}[ANDROID]-${_androidInfo.id}-${_androidInfo.serialNumber}-${_androidInfo.fingerprint}';
 }
 
 class IOSDeviceInfoServiceImpl implements DeviceInfoService {
@@ -119,7 +120,8 @@ class IOSDeviceInfoServiceImpl implements DeviceInfoService {
   }
 
   @override
-  String signature([String? prefix]) => '${prefix.value}${DevToolkit.deviceInfoSignaturePrefix}[iOS]-${_iosInfo.identifierForVendor}-${_iosInfo.utsname.machine}-${_iosInfo.utsname.nodename}-${_iosInfo.utsname.release}-${_iosInfo.utsname.sysname}-${_iosInfo.utsname.version}-${_iosInfo.name}';
+  String signature([String? prefix]) =>
+      '${prefix.value}${DevToolkit.deviceInfoSignaturePrefix}[iOS]-${_iosInfo.identifierForVendor}-${_iosInfo.utsname.machine}-${_iosInfo.utsname.nodename}-${_iosInfo.utsname.release}-${_iosInfo.utsname.sysname}-${_iosInfo.utsname.version}-${_iosInfo.name}';
 }
 
 class MockDeviceInfoServiceImpl implements DeviceInfoService {

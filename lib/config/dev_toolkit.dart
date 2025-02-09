@@ -9,12 +9,15 @@ class DevToolkit {
 
   static String get localeName => _getLocaleName();
 
-  static DevToolkitDateTimePrettyFormatLocalizations get translations => _getDevToolkitDateTimePrettyFormatLocalizations();
+  static DevToolkitDateTimePrettyFormatLocalizations get translations =>
+      _getDevToolkitDateTimePrettyFormatLocalizations();
 
-  static String _getLocaleName() => intl.Intl.canonicalizedLocale(locale.toString());
+  static String _getLocaleName() =>
+      intl.Intl.canonicalizedLocale(locale.toString());
 
-  static DevToolkitDateTimePrettyFormatLocalizations _getDevToolkitDateTimePrettyFormatLocalizations() => switch (localeName) {
-        'en' => DevToolkitDateTimePrettyFormatLocalizationsEn(),
-        _ => DevToolkitDateTimePrettyFormatLocalizationsEn(),
-      };
+  static DevToolkitDateTimePrettyFormatLocalizations
+      _getDevToolkitDateTimePrettyFormatLocalizations() => switch (localeName) {
+            'en' => DevToolkitDateTimePrettyFormatLocalizationsEn(),
+            _ => DevToolkitDateTimePrettyFormatLocalizationsEn(),
+          };
 }

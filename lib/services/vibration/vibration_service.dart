@@ -39,7 +39,8 @@ class VibrationServiceImpl implements VibrationService {
   Future<void> soft() async => await Haptics.vibrate(HapticsType.soft);
 
   @override
-  Future<void> selection() async => await Haptics.vibrate(HapticsType.selection);
+  Future<void> selection() async =>
+      await Haptics.vibrate(HapticsType.selection);
 }
 
 class MockVibrationServiceImpl implements VibrationService {
@@ -68,5 +69,6 @@ class MockVibrationServiceImpl implements VibrationService {
   Future<void> soft() async => debugPrint('MOCK VIBRATION SERVICE: soft');
 
   @override
-  Future<void> selection() async => debugPrint('MOCK VIBRATION SERVICE: selection');
+  Future<void> selection() async =>
+      debugPrint('MOCK VIBRATION SERVICE: selection');
 }

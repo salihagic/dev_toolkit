@@ -2,7 +2,8 @@
 
 import '_all.dart';
 
-class DevToolkitDateTimePrettyFormatLocalizationsEn implements DevToolkitDateTimePrettyFormatLocalizations {
+class DevToolkitDateTimePrettyFormatLocalizationsEn
+    implements DevToolkitDateTimePrettyFormatLocalizations {
   @override
   String get pretty_format_before_1_day => '1 day ago';
   @override
@@ -14,7 +15,8 @@ class DevToolkitDateTimePrettyFormatLocalizationsEn implements DevToolkitDateTim
   @override
   String pretty_format_yesterday_at(String amount) => 'Yesterday at $amount';
   @override
-  String pretty_format_short_yesterday_at(String amount) => 'Yesterday at $amount';
+  String pretty_format_short_yesterday_at(String amount) =>
+      'Yesterday at $amount';
   @override
   String get pretty_format_before_1_hour => '1 hour ago';
   @override
@@ -28,7 +30,8 @@ class DevToolkitDateTimePrettyFormatLocalizationsEn implements DevToolkitDateTim
   @override
   String get pretty_format_short_before_1_minute => '1m';
   @override
-  String pretty_format_before_few_minutes(String amount) => '$amount minutes ago';
+  String pretty_format_before_few_minutes(String amount) =>
+      '$amount minutes ago';
   @override
   String pretty_format_short_before_few_minutes(String amount) => '${amount}m';
   @override
@@ -36,7 +39,8 @@ class DevToolkitDateTimePrettyFormatLocalizationsEn implements DevToolkitDateTim
   @override
   String get pretty_format_short_before_1_second => '1s';
   @override
-  String pretty_format_before_few_seconds(String amount) => '$amount seconds ago';
+  String pretty_format_before_few_seconds(String amount) =>
+      '$amount seconds ago';
   @override
   String pretty_format_short_before_few_seconds(String amount) => '${amount}s';
   @override
@@ -70,7 +74,8 @@ class DevToolkitDateTimePrettyFormatLocalizationsEn implements DevToolkitDateTim
   @override
   String pretty_format_tomorrow_at(String amount) => 'Tomorrow at $amount';
   @override
-  String pretty_format_short_tomorrow_at(String amount) => 'Tomorrow at $amount';
+  String pretty_format_short_tomorrow_at(String amount) =>
+      'Tomorrow at $amount';
   @override
   String get pretty_format_in_1_day => 'In 1 day';
   @override

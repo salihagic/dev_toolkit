@@ -1,6 +1,6 @@
 name: dev_toolkit
 description: "A versatile Flutter library offering a collection of extension methods, helper classes, and reusable utility functions designed to streamline development and boost productivity across multiple projects. With dev_toolkit, simplify your code and build faster, more maintainable applications."
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/salihagic/dev_toolkit
 
 environment:

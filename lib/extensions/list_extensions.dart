@@ -1,11 +1,11 @@
 import 'package:dev_toolkit/dev_toolkit.dart';
 
-extension IterableNullableX<T> on Iterable<T>? {
+extension DevNullableIterableExtensions<T> on Iterable<T>? {
   bool get isNullOrEmpty => this == null || this!.isEmpty;
   bool get isNotNullOrEmpty => !isNullOrEmpty;
 }
 
-extension AppIterableExtensions<T> on Iterable<T> {
+extension DevIterableExtensions<T> on Iterable<T> {
   T? firstOrDefault([bool Function(T element)? test, T? defaultElement]) {
     if (test != null) {
       try {
@@ -47,10 +47,13 @@ extension AppIterableExtensions<T> on Iterable<T> {
     }
   }
 
-  Map<K, List<T>> groupBy<K>(K Function(T) keyFunction) => fold(<K, List<T>>{}, (Map<K, List<T>> map, T element) => map..putIfAbsent(keyFunction(element), () => <T>[]).add(element));
+  Map<K, List<T>> groupBy<K>(K Function(T) keyFunction) => fold(
+      <K, List<T>>{},
+      (Map<K, List<T>> map, T element) =>
+          map..putIfAbsent(keyFunction(element), () => <T>[]).add(element));
 }
 
-extension AppNullableListExtensions<T> on List<T>? {
+extension DevNullableListExtensions<T> on List<T>? {
   List<T> get value => this ?? [];
 
   T? next([T? element, bool Function(T element)? test, bool loop = true]) {
@@ -58,7 +61,35 @@ extension AppNullableListExtensions<T> on List<T>? {
       return null;
     }
 
-    T? byIndexOrFirst(int index) => ((index == (this?.length ?? 0) - 1) && loop) || !index.between(0, (this?.length ?? 0), endInclusive: false) ? this?.first : this?[index + 1];
+    T? byIndexOrFirst(int index) => (index == (this?.length ?? 0) - 1) ||
+            !index.between(0, (this?.length ?? 0), endInclusive: false)
+        ? (loop ? this?.first : this?.last)
+        : this?[index + 1];
+
+    if (element != null) {
+      final index = this?.indexOf(element) ?? 0;
+
+      return byIndexOrFirst(index);
+    }
+
+    if (test != null) {
+      final index = this?.indexWhere(test) ?? 0;
+
+      return byIndexOrFirst(index);
+    }
+
+    return this![0];
+  }
+
+  T? previous([T? element, bool Function(T element)? test, bool loop = true]) {
+    if (this?.isNullOrEmpty ?? true) {
+      return null;
+    }
+
+    T? byIndexOrFirst(int index) => index == 0 ||
+            !index.between(0, (this?.length ?? 0), endInclusive: false)
+        ? (loop ? this?.last : this?.first)
+        : this?[index - 1];
 
     if (element != null) {
       final index = this?.indexOf(element) ?? 0;
@@ -96,7 +127,8 @@ extension AppNullableListExtensions<T> on List<T>? {
 
 extension AppListExtensions<T> on List<T> {
   List<T> addThen(T element, [bool Function(T element)? test]) {
-    final alreadyAdded = test != null ? firstOrDefault(test) != null : contains(element);
+    final alreadyAdded =
+        test != null ? firstOrDefault(test) != null : contains(element);
 
     if (!alreadyAdded) {
       add(element);
