@@ -1,9 +1,14 @@
-import 'package:dev_toolkit/dev_toolkit.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:intl/intl.dart' as intl;
 
+// Project imports:
+import 'package:dev_toolkit/dev_toolkit.dart';
+
 class DevToolkit {
-  static String currencyCode = 'EUR';
+  static String currencyCode = 'USD';
   static String deviceInfoSignaturePrefix = '';
   static Locale locale = Locale('en');
 
@@ -18,6 +23,7 @@ class DevToolkit {
   static DevToolkitDateTimePrettyFormatLocalizations
       _getDevToolkitDateTimePrettyFormatLocalizations() => switch (localeName) {
             'en' => DevToolkitDateTimePrettyFormatLocalizationsEn(),
+            // Add more languages
             _ => DevToolkitDateTimePrettyFormatLocalizationsEn(),
           };
 }

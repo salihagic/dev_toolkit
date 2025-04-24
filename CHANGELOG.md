@@ -1,3 +1,6 @@
+## 0.0.4
+* Extensions and services updated 
+
 ## 0.0.3
 * Extensions updated and docs updated
 

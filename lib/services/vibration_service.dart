@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/foundation.dart';
+
+// Package imports:
 import 'package:haptic_feedback/haptic_feedback.dart';
 
 abstract class VibrationService {

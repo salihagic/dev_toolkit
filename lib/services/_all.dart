@@ -1,4 +1,5 @@
-export 'currency/_all.dart';
-export 'debounce/_all.dart';
-export 'device_info/_all.dart';
-export 'vibration/_all.dart';
+export 'currency_service.dart';
+export 'debounce_service.dart';
+export 'device_info_service.dart';
+export 'throttle_service.dart';
+export 'vibration_service.dart';

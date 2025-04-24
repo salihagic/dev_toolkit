@@ -1,3 +1,4 @@
+// Project imports:
 import 'package:dev_toolkit/dev_toolkit.dart';
 
 abstract class CurrencyService {
@@ -596,4 +597,24 @@ class MockCurrencyServiceImpl implements CurrencyService {
   @override
   String formatWithCurrencyCode(double value, [String currencyCode = 'EUR']) =>
       '$currencyCode ${value.format()}';
+}
+
+enum CurrencySymbolPosition {
+  prefix,
+  sufix;
+
+  bool get isBefore => this == CurrencySymbolPosition.prefix;
+  bool get isAfter => this == CurrencySymbolPosition.sufix;
+}
+
+class Currency {
+  final String symbol;
+  final String code;
+  final CurrencySymbolPosition symbolPosition;
+
+  Currency({
+    required this.symbol,
+    required this.code,
+    required this.symbolPosition,
+  });
 }

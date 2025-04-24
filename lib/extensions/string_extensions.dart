@@ -1,10 +1,14 @@
 // Can you please analyze these extension methods and write a valid README.MD file that showcases how to use each of the methods
 // Please generate the result as one copyable readme.md section
 
+// Dart imports:
 import 'dart:convert';
 
-import 'package:crypto/crypto.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:crypto/crypto.dart';
 
 extension DevStringNullableExtensions on String? {
   String get value => this ?? '';

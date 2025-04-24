@@ -1,7 +1,11 @@
+// Dart imports:
 import 'dart:math';
 
-import 'package:dev_toolkit/dev_toolkit.dart';
+// Package imports:
 import 'package:intl/intl.dart';
+
+// Project imports:
+import 'package:dev_toolkit/dev_toolkit.dart';
 
 extension DevDoubleX on double? {
   String format([int numberOfDecimals = 2, bool ignoreDecimalIfZero = true]) {

@@ -1,6 +1,11 @@
-import 'package:dev_toolkit/dev_toolkit.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:intl/intl.dart';
+
+// Project imports:
+import 'package:dev_toolkit/dev_toolkit.dart';
 
 extension DevDateTimeX on DateTime? {
   String format([String pattern = 'dd.MM.yyyy']) =>

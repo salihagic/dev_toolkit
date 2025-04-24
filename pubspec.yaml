@@ -1,24 +1,31 @@
 name: dev_toolkit
 description: "A versatile Flutter library offering a collection of extension methods, helper classes, and reusable utility functions designed to streamline development and boost productivity across multiple projects. With dev_toolkit, simplify your code and build faster, more maintainable applications."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/salihagic/dev_toolkit
 
 environment:
   sdk: ^3.6.0
-  flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
   intl: ^0.19.0
   crypto: ^3.0.6
-  device_info_plus: ^11.1.1
+  device_info_plus: ^11.4.0
+  device_calendar: ^4.3.3
+  permission_handler: ^12.0.0+1
   haptic_feedback: ^0.5.1+1
   easy_debounce: ^2.0.3
+  flutter_udid: ^4.0.0
+  go_router: ^15.0.0
+  open_file: ^3.5.10
+  path_provider: ^2.1.5
+  uuid: ^4.5.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  import_sorter: ^4.6.0
 
 flutter:

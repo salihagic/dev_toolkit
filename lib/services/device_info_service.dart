@@ -1,8 +1,21 @@
+// Dart imports:
 import 'dart:io';
 
-import 'package:dev_toolkit/dev_toolkit.dart';
-import 'package:device_info_plus/device_info_plus.dart';
+// Flutter imports:
 import 'package:flutter/foundation.dart';
+
+// Package imports:
+import 'package:device_info_plus/device_info_plus.dart';
+import 'package:flutter_udid/flutter_udid.dart';
+
+// Project imports:
+import 'package:dev_toolkit/dev_toolkit.dart';
+
+enum DevicePlatform {
+  android,
+  ios,
+  other,
+}
 
 class DeviceInfoServiceFactory {
   static DeviceInfoService resolveByPlatform() {
@@ -27,6 +40,7 @@ abstract class DeviceInfoService {
 class AndroidDeviceInfoServiceImpl implements DeviceInfoService {
   final _deviceInfo = DeviceInfoPlugin();
   late AndroidDeviceInfo _androidInfo;
+  late String _consistentUdid;
 
   @override
   DevicePlatform get platform => DevicePlatform.android;
@@ -34,6 +48,7 @@ class AndroidDeviceInfoServiceImpl implements DeviceInfoService {
   @override
   Future<void> init() async {
     _androidInfo = await _deviceInfo.androidInfo;
+    _consistentUdid = await FlutterUdid.consistentUdid;
 
     log();
   }
@@ -80,18 +95,20 @@ class AndroidDeviceInfoServiceImpl implements DeviceInfoService {
 
   @override
   String signature([String? prefix]) =>
-      '${prefix.value}${DevToolkit.deviceInfoSignaturePrefix}[ANDROID]-${_androidInfo.id}-${_androidInfo.serialNumber}-${_androidInfo.fingerprint}';
+      '${prefix.value}${DevToolkit.deviceInfoSignaturePrefix}[ANDROID]-$_consistentUdid';
 }
 
 class IOSDeviceInfoServiceImpl implements DeviceInfoService {
   final _deviceInfo = DeviceInfoPlugin();
   late IosDeviceInfo _iosInfo;
+  late String _consistentUdid;
 
   @override
   DevicePlatform get platform => DevicePlatform.ios;
 
   @override
   Future<void> init() async {
+    _consistentUdid = await FlutterUdid.consistentUdid;
     _iosInfo = await _deviceInfo.iosInfo;
   }
 
@@ -121,7 +138,7 @@ class IOSDeviceInfoServiceImpl implements DeviceInfoService {
 
   @override
   String signature([String? prefix]) =>
-      '${prefix.value}${DevToolkit.deviceInfoSignaturePrefix}[iOS]-${_iosInfo.identifierForVendor}-${_iosInfo.utsname.machine}-${_iosInfo.utsname.nodename}-${_iosInfo.utsname.release}-${_iosInfo.utsname.sysname}-${_iosInfo.utsname.version}-${_iosInfo.name}';
+      '${prefix.value}${DevToolkit.deviceInfoSignaturePrefix}[iOS]-$_consistentUdid';
 }
 
 class MockDeviceInfoServiceImpl implements DeviceInfoService {
