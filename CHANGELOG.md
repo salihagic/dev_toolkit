@@ -1,3 +1,6 @@
+## 0.0.5
+* Update MapExtensions
+
 ## 0.0.4
 * Extensions and services updated 
 
