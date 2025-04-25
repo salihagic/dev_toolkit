@@ -1,10 +1,7 @@
-// Dart imports:
 import 'dart:math';
 
-// Package imports:
 import 'package:intl/intl.dart';
 
-// Project imports:
 import 'package:dev_toolkit/dev_toolkit.dart';
 
 extension DevDoubleX on double? {

@@ -1,6 +1,7 @@
 export 'bool_extensions.dart';
 export 'build_context_extensions.dart';
 export 'color_extensions.dart';
+export 'connectivity_extensions.dart';
 export 'date_time_extensions.dart';
 export 'double_extensions.dart';
 export 'duration_extensions.dart';

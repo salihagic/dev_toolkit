@@ -1,5 +1,6 @@
-import 'package:dev_toolkit/extensions/date_time_extensions.dart';
 import 'package:flutter/material.dart';
+
+import 'package:dev_toolkit/extensions/date_time_extensions.dart';
 
 extension MapStringDynamicX on Map<String, dynamic>? {
   /// For parsing objects of some class type that has it's own parse (eg. fromJson method)

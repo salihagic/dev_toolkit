@@ -1,4 +1,3 @@
-// Package imports:
 import 'package:easy_debounce/easy_throttle.dart';
 
 abstract class Throttler {

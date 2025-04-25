@@ -1,10 +1,7 @@
-// Dart imports:
 import 'dart:io';
 
-// Flutter imports:
 import 'package:flutter/foundation.dart';
 
-// Package imports:
 import 'package:open_file/open_file.dart';
 import 'package:path/path.dart' as p;
 import 'package:path/path.dart' as path;
@@ -12,7 +9,6 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
 
-// Project imports:
 import 'package:dev_toolkit/extensions/list_extensions.dart';
 import 'package:dev_toolkit/extensions/string_extensions.dart';
 

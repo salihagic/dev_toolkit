@@ -1,3 +1,6 @@
+## 0.0.6
+* Connectivity extensions added
+
 ## 0.0.5
 * Update MapExtensions
 

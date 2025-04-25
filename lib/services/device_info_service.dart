@@ -1,14 +1,10 @@
-// Dart imports:
 import 'dart:io';
 
-// Flutter imports:
 import 'package:flutter/foundation.dart';
 
-// Package imports:
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter_udid/flutter_udid.dart';
 
-// Project imports:
 import 'package:dev_toolkit/dev_toolkit.dart';
 
 enum DevicePlatform {

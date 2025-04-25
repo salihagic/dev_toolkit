@@ -1,4 +1,3 @@
-// Project imports:
 import 'package:dev_toolkit/dev_toolkit.dart';
 
 abstract class CurrencyService {

@@ -1,7 +1,5 @@
-// Package imports:
 import 'package:device_calendar/device_calendar.dart' as device_calendar;
 
-// Project imports:
 import 'package:dev_toolkit/extensions/bool_extensions.dart';
 import 'package:dev_toolkit/extensions/list_extensions.dart';
 import 'package:dev_toolkit/extensions/string_extensions.dart';
